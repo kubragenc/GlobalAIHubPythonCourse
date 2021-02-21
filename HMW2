@@ -1,20 +1,22 @@
-if __name__ == '__main__':
-    grades = ["midterm", "final", "homework"]
-    students = ['name', 'surname']
-    info = {"Student": [], "Grades": []}
-    avg = {"Name": [], "Grade": []}
-    sorted_list = {"Name": "", "Grade": ""}
-    for i in range(0, 2):
-        students[0] = input("Enter name:")
-        students[1] = input("Enter surname:")
-        grades[0] = input("Enter midterm:")
-        grades[1] = input("Enter final:")
-        grades[2] = input("Enter homework:")
-        info["Student"].append({"name": students[0], "surname": students[1]})
-        info["Grades"].append({"midterm": grades[0], "final": grades[1], "homework": grades[2]})
-    for x in range(0, 2):
-        result = float((float(info["Grades"][x]["midterm"]) + float(info["Grades"][x]["final"]) + float(info["Grades"][x]["homework"])) / 3)
-        avg["Name"].append(info["Student"][x])
-        avg["Grade"].append({"grade": result})
-    print(avg)
+grades = ["midterm", "final", "homework"]
+students = ['name', 'surname']
+info = []
+avg = 0
+sorted_list = {"Name": "", "Grade": ""}
+for i in range(0, 5):
+    students[0] = input("Enter name:")
+    students[1] = input("Enter surname:")
+    grades[0] = float(input("Enter midterm:"))
+    grades[1] = float(input("Enter final:"))
+    grades[2] = float(input("Enter homework:"))
+    avg = (grades[0] + grades[1] + grades[2]) / 3
+    info.append({"name": students[0], "surname": students[1], "grade": avg})
+
+max = []
+
+for i in range(0, 5):
+    if info[i]['grade'] > 0:
+        max = [{"name": students[0], "surname": students[1], "grade": avg}]
+
+print("Congratulations " + max[0]["name"] + " " + max[0]["surname"] + "!!!!!")
 
