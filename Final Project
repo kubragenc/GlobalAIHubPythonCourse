@@ -1,1 +1,85 @@
+class Cooking:
+
+    def cooking_cook(self):
+        if choice == '1':
+            kek = Kek(un="2.5 su bardağı", yumurta="3 adet", sut="1 su bardağı", seker="1.5 su bardağı toz şeker",
+                      sivi_yag="1 su bardağı", kakao="1 paket", kabartma_tozu="2 paket", vanilya="1 paket")
+            kek.print_kek()
+        if choice == '2':
+            kek = DomatesCorbasi(tereyag="2 çorba kaşığı", salca="1 çorba kaşığı", tuz="1 tatlı kaşığı.", su="1 litre",
+                                 domates="5 tane", kasar="1 çorba kaşığı rendelenmiş.", un="3 çorba kaşığı",
+                                 sut="1 su bardağı")
+            kek.print_domates_corbasi()
+        if choice == '3':
+            pilav = Pilav(yag="2 kaşık yağ", su="2 su bardagi", pirinc="2 su bardagi pirinc", tuz="1 tatlı kaşığı")
+            pilav.print_pilav()
+
+
+class Kek:
+
+    def _init_(self, un, yumurta, sut, seker, kabartma_tozu, sivi_yag, kakao, vanilya):
+        self.un = un
+        self.yumurta = yumurta
+        self.sut = sut
+        self.seker = seker
+        self.kabartma_tozu = kabartma_tozu
+        self.sivi_yag = sivi_yag
+        self.kakao = kakao
+        self.vanilya = vanilya
+
+    def print_kek(self):
+        print("Un: " + self.un)
+        print("Yumurta: " + self.yumurta)
+        print("Süt: " + self.sut)
+        print("Şeker: " + self.seker)
+        print("Kabartma Tozu: " + self.kabartma_tozu)
+        print("Sıvı Yağ: " + self.sivi_yag)
+        print("Kakao: " + self.kakao)
+        print("Vanilya: " + self.vanilya)
+
+
+class DomatesCorbasi:
+
+    def _init_(self, tereyag, salca, tuz, su, domates, kasar, un, sut):
+        self.tereyag = tereyag
+        self.salca = salca
+        self.tuz = tuz
+        self.su = su
+        self.domates = domates
+        self.kasar = kasar
+        self.un = un
+        self.sut = sut
+
+    def print_domates_corbasi(self):
+        print("Tereyağ: " + self.tereyag)
+        print("Salça: " + self.salca)
+        print("Tuz: " + self.tuz)
+        print("Su: " + self.su)
+        print("Domates: " + self.domates)
+        print("Kaşar: " + self.kasar)
+        print("Un: " + self.un)
+        print("Süt: " + self.sut)
+
+
+class Pilav:
+
+    def _init_(self, yag, su, pirinc, tuz):
+        self.yag = yag
+        self.su = su
+        self.pirinc = pirinc
+        self.tuz = tuz
+
+    def print_pilav(self):
+        print("Yağ: " + self.yag)
+        print("Su: " + self.su)
+        print("Pirinç " + self.pirinc)
+        print("Tuz: " + self.tuz)
+
+
+print("1) Kek")
+print("2) Domates Çorbası")
+print("3) Pilav")
+choice = input("Hangi yemeği yapmak istiyorsunuz: ")
+cook = Cooking()
+cook.cooking_cook()
 
